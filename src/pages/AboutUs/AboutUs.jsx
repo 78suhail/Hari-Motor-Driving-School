@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaCheckCircle, FaPhoneAlt, FaChevronDown } from "react-icons/fa";
-import AboutUsSection from "./AboutUsSection";
+import StatsBanner from '../Home_Main_pages/Banner/StatsBanner'
+import OurBestInstructor from './OurBestInstructor'
 
 const AboutUs = () => {
      const scrollToTop = () => {
@@ -153,7 +154,10 @@ const AboutUs = () => {
       </div>
 
       <div>
-        <AboutUsSection />
+        <StatsBanner/>
+      </div>
+        <div>
+        <OurBestInstructor />
       </div>
     </div>
   );

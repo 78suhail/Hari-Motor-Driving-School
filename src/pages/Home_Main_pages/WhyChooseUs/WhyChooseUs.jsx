@@ -60,21 +60,23 @@ const WhyChooseUs = () => {
       </div>
 
       {/* BOTTOM FEATURE BAR */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-        {[
-          { icon: <FaCarSide size={28} />, title: "COMFORT VEHICLES" },
-          { icon: <FaIdCard size={28} />, title: "LICENSED TRAINING" },
-          { icon: <FaRoad size={28} />, title: "DRIVING PRACTICE" },
-          { icon: <FaClock size={28} />, title: "FLEXIBLE SCHEDULE" },
-        ].map((feature, i) => (
-          <div
-            key={i}
-            className="bg-myBg hover:bg-blue-900 text-white flex flex-col items-center justify-center py-7 px-4 gap-3 transition-colors"
-          >
-            {feature.icon}
-            <p className="font-semibold text-center">{feature.title}</p>
-          </div>
-        ))}
+      <div className="px-4 sm:px-6 lg:px-0">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-gray-50">
+          {[
+            { icon: <FaCarSide size={28} />, title: "COMFORT VEHICLES" },
+            { icon: <FaIdCard size={28} />, title: "LICENSED TRAINING" },
+            { icon: <FaRoad size={28} />, title: "DRIVING PRACTICE" },
+            { icon: <FaClock size={28} />, title: "FLEXIBLE SCHEDULE" },
+          ].map((feature, i) => (
+            <div
+              key={i}
+              className="bg-myBg hover:bg-blue-900 text-white flex flex-col items-center justify-center py-7 px-4 gap-3 transition-colors border-b border-r border-gray-50 rounded-md"
+            >
+              {feature.icon}
+              <p className="font-semibold text-center">{feature.title}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

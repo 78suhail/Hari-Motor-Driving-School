@@ -18,6 +18,7 @@ import DrivingGuidelines from "./pages/DrivingGuidelines/DrivingGuidelines";
 import Services from "./pages/Services_page/Services";
 import PricingPlan from "./pages/PricingPlan/PricingPlan";
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage'
+import TestimonialForm from './pages/Testimonials/TestimonialForm'
 
 // Admin Pages
 import Dashboard from "./pages/AdminPages/Dashboard";
@@ -51,6 +52,7 @@ const App = () => {
         <Route path="pricing-plan" element={<PricingPlan />} />
         <Route path="driving-guidelines" element={<DrivingGuidelines />} />
         <Route path="faqs" element={<Faqs />} />
+        <Route path="testimonialForm" element={<TestimonialForm />} />
 
         {/* Branch Pages */}
         {branches.map((branch) => (
