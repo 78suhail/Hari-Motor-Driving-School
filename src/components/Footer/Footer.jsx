@@ -38,8 +38,8 @@ const Footer = () => {
           {/* Logo + Description */}
           <div>
             <img
-              src="/prime-motor-logo.jpg"
-              alt="Prime Motors"
+              src="/logo1.png"
+              alt="Hari Motors"
               className="w-48 mb-4"
             />
             <p className="text-gray-300 text-sm leading-relaxed">

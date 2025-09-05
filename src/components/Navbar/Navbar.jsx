@@ -68,7 +68,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
         {/* Logo */}
         <div className="flex items-center space-x-3">
-          <img src="/logo.png" alt="Logo" className="h-12 w-auto" />
+          <img src="/logo.png" alt="Logo" className="h-16 w-auto" />
         </div>
 
         {/* Desktop Menu */}
@@ -154,7 +154,7 @@ const Navbar = () => {
             >
               {/* Drawer Header */}
               <div className="flex items-center justify-between px-4 py-4 bg-gray-50 border-b border-gray-200">
-                <img src="/prime-motor-logo.jpg" alt="Logo" className="h-12 w-auto" />
+                <img src="/logo.png" alt="Logo" className="h-12 w-auto" />
                 <button onClick={handleMobileMenuClose} className="ml-2 p-2 rounded-full hover:bg-blue-100">
                   <FiX size={28} className="black" />
                 </button>
