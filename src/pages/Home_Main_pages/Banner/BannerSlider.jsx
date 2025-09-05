@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import {Link} from 'react-router-dom'
 
 const BannerSlider = () => {
   const slides = [
@@ -71,9 +72,11 @@ const BannerSlider = () => {
                   {line}
                 </h2>
               ))}
+              <Link to='/contact'>
               <button className="mt-4 bg-gradient-to-r from-blue-800 to-blue-600 hover:from-blue-600 hover:to-blue-800 text-white font-semibold px-6 py-3 rounded-lg shadow-xl transition-transform transform hover:scale-105">
                 Book Now
               </button>
+              </Link>
             </div>
           </SwiperSlide>
         ))}
