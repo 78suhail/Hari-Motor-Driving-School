@@ -54,7 +54,7 @@ const guidelines = [
 const DrivingGuidelines = () => {
   return (
     <>
-      <div className="bg-white min-h-screen">
+      <div className="bg-myBgColor min-h-screen">
         <div className="relative w-full h-64 md:h-80 flex items-center justify-center">
           {/* Mobile Image */}
           <img

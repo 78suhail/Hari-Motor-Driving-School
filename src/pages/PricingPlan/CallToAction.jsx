@@ -1,7 +1,12 @@
 import React from "react";
 import { FaPhoneAlt, FaPlay } from "react-icons/fa";
+import {Link} from "react-router-dom"
 
 const CallToAction = () => {
+
+    const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <section className="relative bg-gray-800 text-white py-10">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 px-6">
@@ -34,9 +39,11 @@ const CallToAction = () => {
             Start Learning To Drive Today <br /> Contact Now!
           </h2>
 
+          <Link to ="/contact" onClick={scrollToTop}>
           <button className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition">
             Contact Us →
           </button>
+          </Link>
         </div>
       </div>
     </section>

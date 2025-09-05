@@ -39,7 +39,7 @@ const packages = [
 ];
 
 const PricingPackages = () => (
-  <section className="py-14 bg-white">
+  <section className="py-14 bg-myBgColor">
     <div className="max-w-5xl mx-auto px-4">
       <h2 className="text-center text-4xl font-bold mb-4">Our Most Valuable Pricing Packages</h2>
       <p className="text-center text-gray-500 mb-12">The Driving Instructors Association offers a diverse range.</p>

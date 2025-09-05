@@ -21,7 +21,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="bg-gray-900 text-white py-2 fixed top-0 left-0 w-full z-50">
+      <header className="bg-myBg text-white py-4 fixed top-0 left-0 w-full z-50">
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between text-sm">
           {/* Phone Number */}
           <div className="flex items-center gap-2">

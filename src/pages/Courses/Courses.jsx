@@ -5,7 +5,10 @@ import {
   FaArrowRight,
   FaChevronDown,
 } from "react-icons/fa";
-import CoursesStats from "./CoursesStats";
+import { Link } from "react-router-dom";
+import PricingPackages from "./PricingPackages";
+import Testimonials from '../Testimonials/Testimonials'
+import StatsBanner from '../Home_Main_pages/Banner/StatsBanner'
 
 const courses = [
   {
@@ -48,7 +51,7 @@ const courses = [
 
 const Courses = () => {
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-myBgColor min-h-screen">
       {/* Banner Section */}
       <div className="relative w-full h-64 md:h-80 flex items-center justify-center">
         {/* Mobile Image */}
@@ -137,10 +140,12 @@ const Courses = () => {
                   {course.duration}
                 </span>
               </div>
-              <button className="w-full border border-gray-300 px-5 py-2 rounded-lg font-semibold hover:bg-gray-100 flex items-center justify-center gap-2 transition">
-                READ MORE
-                <FaArrowRight className="w-4 h-4" />
-              </button>
+              <Link to="/contact">
+                <button className="w-full border border-gray-300 px-5 py-2 rounded-lg font-semibold hover:bg-blue-700 flex items-center justify-center gap-2 transition">
+                  BOOK NOW
+                  <FaArrowRight className="w-4 h-4" />
+                </button>
+              </Link>
             </div>
           </div>
         ))}
@@ -148,7 +153,13 @@ const Courses = () => {
 
       {/* Stats Section */}
       <div className="mt-14">
-        <CoursesStats />
+        <StatsBanner />
+      </div>
+      <div>
+        <PricingPackages />
+      </div>
+      <div className="mb-6 ">
+        <Testimonials />
       </div>
     </div>
   );

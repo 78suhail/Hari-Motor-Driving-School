@@ -1,24 +1,46 @@
-import React from "react";
-import {
-  FaMapMarkerAlt,
-  FaPhoneAlt,
-  FaEnvelope,
-  FaWhatsapp,
-  FaInstagram,
-  FaChevronDown,
-  FaUser,
-  FaRegCommentDots,
-} from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { useState } from 'react'
+import { 
+  FaPhone, FaEnvelope, FaMapMarkerAlt, 
+  FaFacebook, FaInstagram, FaTwitter, FaLinkedin, FaYoutube, FaPaperPlane, FaChevronDown 
+} from 'react-icons/fa'
 
-const Contact = () => {
+export default function ContactForm() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    message: ''
+  })
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log('Form submitted:', formData)
+  }
+
+  const socialIcons = [
+    { icon: FaFacebook, href: '#' },
+    { icon: FaInstagram, href: '#' },
+    { icon: FaTwitter, href: '#' },
+    { icon: FaLinkedin, href: '#' },
+    { icon: FaYoutube, href: '#' }
+  ]
+
   return (
-    <div className="bg-white min-h-screen">
-      {/* Hero Section */}
+    <div className="bg-myBgColor min-h-screen">
+      {/* ✅ Hero Section */}
       <div className="relative w-full h-64 md:h-80 flex items-center justify-center">
         {/* Mobile Image */}
         <img
-          src="/Images/ContactUs/business-woman-is-driving-talking-phone.jpg"
+          src="/Images/AboutUs/man-driving-with-his-girlfriend.jpg"
           alt="Contact Hero Mobile"
           className="absolute inset-0 w-full h-full object-contain bg-black opacity-90 block md:hidden"
         />
@@ -30,13 +52,13 @@ const Contact = () => {
           className="absolute inset-0 w-full h-full object-cover object-center opacity-80 hidden md:block"
         />
 
-       
+        {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-60" />
 
-        {/* Content */}
+        {/* Hero Content */}
         <div className="relative z-10 flex flex-col items-center justify-center h-full">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-2 text-center">
-            Contact
+            Contact Us
           </h1>
           <div className="mt-4 animate-bounce">
             <FaChevronDown className="w-7 h-7 text-white mx-auto" />
@@ -44,145 +66,182 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* Contact Info Cards */}
-      <div className="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="bg-blue-100 rounded-2xl flex flex-col items-center p-8 text-center">
-          <FaMapMarkerAlt className="text-4xl text-blue-600 mb-4" />
-          <div className="text-gray-500 mb-2">OUR OFFICE LOCATION</div>
-          <div className="text-xl font-bold text-gray-900">1254 New Delhi</div>
-        </div>
-        <div className="bg-blue-600 rounded-2xl flex flex-col items-center p-8 text-center text-white">
-          <FaPhoneAlt className="text-4xl mb-4" />
-          <div className="mb-2">HAVE A QUESTION?</div>
-          <h1 className="text-2xl font-bold hover:underline">
-            +91 999-999-4613
-          </h1>
-        </div>
-        <div className="bg-blue-100 rounded-2xl flex flex-col items-center p-8 text-center">
-          <FaEnvelope className="text-4xl text-blue-600 mb-4" />
-          <div className="text-gray-500 mb-2">EMAIL US ON</div>
-          <a
-            href="mailto:info@dride.com"
-            className="text-xl font-bold text-gray-900 hover:underline"
-          >
-            info@dride.com
-          </a>
-        </div>
-      </div>
-
-      {/* Map and Form Section */}
-      <div className="max-w-6xl mx-auto px-4 pb-16 grid md:grid-cols-2 gap-8 items-start">
-        {/* Map */}
-        <div>
-          <div className="rounded-2xl overflow-hidden shadow-lg h-[520px]">
-            <iframe
-              title="Google Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19809.96407396413!2d-0.134649!3d51.503324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604c3e6b1b1b1%3A0x2e8b8b8b8b8b8b8b!2sLondon%20Eye!5e0!3m2!1sen!2suk!4v1620000000000!5m2!1sen!2suk"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
+      {/* ✅ Contact Section */}
+      <div className="py-12 px-4">
+        <div className="max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-12">
+            <p className="text-blue-600 font-semibold mb-2 uppercase tracking-wider">Ask Anything</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800">Write Message</h2>
           </div>
-          {/* Social Icons */}
-          <div className="flex justify-center gap-8 mt-16">
-            <Link
-              to="https://wa.me/917460902506"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center text-green-500 hover:text-green-600 text-2xl md:text-3xl font-medium gap-2"
-            >
-              <FaWhatsapp className="text-[40px]" />
-              <span className="text-base md:text-lg text-gray-700 font-semibold">
-                7460902506
-              </span>
-            </Link>
-            <Link
-              to="https://instagram.com/suhail_coder"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center text-pink-500 hover:text-pink-600 text-2xl md:text-3xl font-medium gap-2"
-            >
-              <FaInstagram className="text-[40px]" />
-              <span className="text-base md:text-lg text-gray-700 font-semibold">
-                prime_7860
-              </span>
-            </Link>
-          </div>
-        </div>
 
-        {/* Form */}
-        <form className="bg-gray-50 rounded-2xl p-8 shadow-lg w-full max-w-md mx-auto">
-          <h2 className="text-2xl font-bold mb-2">Get A Quote</h2>
-          <div className="border-b-2 border-blue-600 w-24 mb-6" />
-          <div className="space-y-4">
-            <div className="relative">
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="w-full pl-10 pr-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
-              />
-              <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-            </div>
-            <div className="relative">
-              <input
-                type="email"
-                placeholder="Your Email"
-                className="w-full pl-10 pr-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
-              />
-              <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-            </div>
-            <div className="relative">
-              <input
-                type="tel"
-                placeholder="Your Number"
-                className="w-full pl-10 pr-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
-              />
-              <FaPhoneAlt className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-            </div>
-            <div>
-              <select className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400">
-                <option>Select Service</option>
-                <option>Driving Lessons</option>
-                <option>License Assistance</option>
-                <option>Test Preparation</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div className="relative">
-              <textarea
-                placeholder="Your Message"
-                className="w-full pl-10 pr-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none"
-                rows={3}
-              ></textarea>
-              <FaRegCommentDots className="absolute left-3 top-3 text-gray-400" />
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-blue-600 text-white py-2 rounded font-bold text-lg hover:bg-blue-700 transition"
-            >
-              Send
-            </button>
-          </div>
-        </form>
-      </div>
+          {/* Main Content */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            
+            {/* Contact Form */}
+            <div className="bg-white rounded-lg shadow-lg p-8 order-1 lg:order-2">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Name Fields */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-gray-700 font-medium mb-2">
+                      First Name <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleInputChange}
+                      required
+                      placeholder="Enter your first name"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg 
+                                 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-gray-700 font-medium mb-2">
+                      Last Name <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleInputChange}
+                      required
+                      placeholder="Enter your last name"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg 
+                                 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                    />
+                  </div>
+                </div>
 
-      {/* Call to Action Footer */}
-      <div className="bg-blue-900 text-white py-8 flex flex-col md:flex-row items-center justify-between px-4 md:px-24 gap-4">
-        <span className="text-xl sm:text-2xl font-semibold text-center md:text-left">
-          Ready For Join Our Class?
-        </span>
-        <div className="flex items-center bg-blue-800 px-4 sm:px-6 py-3 rounded-lg w-full md:w-auto justify-center">
-          <FaPhoneAlt className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />
-          <span className="text-base sm:text-lg font-medium">
-            +91 999-999-4613
-          </span>
+                {/* Email */}
+                <div>
+                  <label className="block text-gray-700 font-medium mb-2">
+                    Email Address <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                    placeholder="Enter your email address"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg 
+                               focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                  />
+                </div>
+
+                {/* Phone */}
+                <div>
+                  <label className="block text-gray-700 font-medium mb-2">
+                    Phone Number <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    required
+                    placeholder="Enter your phone number"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg 
+                               focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                  />
+                </div>
+
+                {/* Message */}
+                <div>
+                  <label className="block text-gray-700 font-medium mb-2">
+                    Message <span className="text-red-500">*</span>
+                  </label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    rows="5"
+                    required
+                    placeholder="Write your message here..."
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg 
+                               focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none resize-vertical"
+                  />
+                </div>
+
+                {/* Submit Button */}
+                <div className="flex justify-end">
+                  <button
+                    type="submit"
+                    className="bg-blue-900 text-white px-8 py-3 rounded-lg font-semibold 
+                               flex items-center space-x-2 hover:bg-blue-800 
+                               transition-colors duration-200 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  >
+                    <FaPaperPlane className="w-5 h-5" />
+                    <span>Send Message</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            {/* Contact Details */}
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden order-2 lg:order-1">
+              <div className="bg-blue-900 text-white py-6 px-8">
+                <h2 className="text-2xl font-bold">Contact Details</h2>
+              </div>
+
+              <div className="p-8 space-y-8">
+                {/* Phone */}
+                <div className="flex items-start space-x-4">
+                  <div className="bg-blue-900 p-4 rounded-lg">
+                    <FaPhone className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-gray-600 font-semibold mb-1">CALL US</p>
+                    <p className="text-gray-800 font-medium">+91 880-073-3355</p>
+                  </div>
+                </div>
+
+                {/* Email */}
+                <div className="flex items-start space-x-4">
+                  <div className="bg-blue-900 p-4 rounded-lg">
+                    <FaEnvelope className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-gray-600 font-semibold mb-1">EMAIL</p>
+                    <p className="text-gray-800 font-medium break-all">info@Harimotorsdrivingschool.com</p>
+                  </div>
+                </div>
+
+                {/* Address */}
+                <div className="flex items-start space-x-4">
+                  <div className="bg-blue-900 p-4 rounded-lg">
+                    <FaMapMarkerAlt className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-gray-800 font-medium leading-relaxed">
+                      A-208/2, 208-A1, Ground Floor,<br />
+                      Savitri Nagar, Hostel Road,<br />
+                      Malviya Nagar, New Delhi-110017
+                    </p>
+                  </div>
+                </div>
+
+                {/* Social Media Icons */}
+                <div className="flex space-x-3 pt-4">
+                  {socialIcons.map((social, index) => (
+                    <a
+                      key={index}
+                      href={social.href}
+                      className="bg-blue-900 p-3 rounded-lg hover:bg-blue-800 transition-colors duration-200"
+                    >
+                      <social.icon className="w-5 h-5 text-white" />
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
-  );
-};
-
-export default Contact;
+  )
+}

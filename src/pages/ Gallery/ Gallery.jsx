@@ -154,7 +154,7 @@ const GalleryGrid = () => {
 --------------------------------------------------- */
 const Gallery = () => {
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-myBgColor min-h-screen">
       {/* Banner */}
       <Banner />
 

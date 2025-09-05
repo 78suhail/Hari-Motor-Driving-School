@@ -16,7 +16,7 @@ const services = [
       "Driving instructor training is a process that involves passing three tests to qualify as a driving instructor course.",
     icon: <FaChalkboardTeacher className="text-white text-2xl" />,
     iconBg: "bg-blue-600",
-    link: "/services/instructor-training",
+    link: "/contact",
   },
   {
     title: "Driving License",
@@ -25,7 +25,7 @@ const services = [
       "A driving license is an official document that permits an individual to operate one or more types of motorized vehicles.",
     icon: <FaIdCard className="text-white text-2xl" />,
     iconBg: "bg-blue-600",
-    link: "/services/driving-license",
+    link: "/contact",
   },
   {
     title: "Safety Guideline",
@@ -34,13 +34,13 @@ const services = [
       "Safety guidelines cover topics such as safety, chemical safety, and emergency procedures. to prevent injuries",
     icon: <AiFillSafetyCertificate className="text-white text-2xl" />,
     iconBg: "bg-blue-600",
-    link: "/driving-guidelines",
+    link: "/cONTACT",
   },
 ];
 
 const Services = () => {
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-myBgColor min-h-screen">
       {/* Hero Section */}
       <div className="relative w-full h-64 md:h-80 flex items-center justify-center">
         <img
@@ -89,7 +89,7 @@ const Services = () => {
                 to={service.link}
                 className="flex items-center gap-2 text-sm font-semibold text-gray-900 hover:text-blue-700 transition group w-fit"
               >
-                READ MORE
+                BOOK NOW
                 <span className="inline-block group-hover:translate-x-1 transition-transform">
                   <svg
                     width="18"

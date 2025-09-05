@@ -25,22 +25,24 @@ const instructors = [
 
 const TeamSection = () => {
   return (
-    <section className="bg-gray-900 py-16 px-4 mt-8">
+    <section className="bg-myBg py-16 px-4 mt-8">
       <div className="max-w-6xl mx-auto text-center">
-        <p className="text-blue-400 font-semibold uppercase">Meet Our Team</p>
+        <p className="text-white font-semibold uppercase">Meet Our Team</p>
         <h2 className="text-3xl font-bold text-white mb-10">Our Instructors</h2>
 
         <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
           {instructors.map((instructor, index) => (
             <div
               key={index}
-              className="bg-white rounded-md shadow-md overflow-hidden"
+              className="bg-white rounded-md shadow-md overflow-hidden group"
             >
-              <img
-                src={instructor.img}
-                alt={instructor.name}
-                className="w-full h-60 object-cover"
-              />
+              <div className="overflow-hidden">
+                <img
+                  src={instructor.img}
+                  alt={instructor.name}
+                  className="w-full h-60 object-cover transform transition-transform duration-700 ease-in-out group-hover:scale-110 cursor-pointer"
+                />
+              </div>
               <div className="p-4">
                 <h3 className="text-lg font-bold text-gray-900">
                   {instructor.name}

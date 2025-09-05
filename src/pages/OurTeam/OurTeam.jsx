@@ -78,7 +78,7 @@ const TeamCard = ({ member }) => (
       <img
         src={member.image}
         alt={member.name}
-        className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
+        className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105 cursor-pointer"
       />
       {member.socials?.length > 0 && (
         <div className="absolute top-1/2 right-4 -translate-y-1/2 flex flex-col gap-2 opacity-0 group-hover:opacity-100 group-hover:right-4 transition-all duration-300">
@@ -134,7 +134,7 @@ const OurTeam = () => {
         <img
           src="/Images/ContactUs/route-discussion-rainy-drive-driver-girl.jpg"
           alt="Contact Hero Desktop"
-          className="absolute inset-0 w-full h-full object-cover object-center opacity-80 hidden md:block"
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-80 hidden md:block "
         />
 
         <div className="absolute inset-0 bg-black bg-opacity-60" />

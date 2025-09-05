@@ -1,139 +1,85 @@
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation";
+import "swiper/css/pagination";
 
-export default function BannerSlider() {
+const BannerSlider = () => {
+  const slides = [
+    {
+      image: "/Images/Banner/123.jpg",
+      alt: "Slide 1",
+      textLines: [
+        "Drive Safe, Drive Smart.",
+        "Learn from Expert Instructors.",
+        "Start Your Journey Today!"
+      ],
+    },
+    {
+      image: "/Images/Banner/123.jpg",
+      alt: "Slide 2",
+      textLines: [
+        "Master the Road, Gain Confidence.",
+        "Professional Training.",
+        "Book Your Lesson Now!"
+      ],
+    },
+    {
+      image: "/Images/Banner/123.jpg",
+      alt: "Slide 3",
+      textLines: [
+        "Safe Driving Guaranteed.",
+        "Modern Vehicles.",
+        "Enroll Today!"
+      ],
+    },
+  ];
+
   return (
-    <div className="max-w-7xl mx-auto py-6">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {/* Left Side - Swiper */}
-        <div className="col-span-2">
-          <Swiper
-            modules={[Navigation, Autoplay]}
-            navigation
-            autoplay={{ delay: 3000 }}
-            loop={true}
-            className="rounded-lg overflow-hidden group"
-          >
-            {/* Slide 1 */}
-            <SwiperSlide>
-              <div className="relative">
-                <img
-                  src="/Images/Banner/Banner4.jpg"
-                  alt="Slide 1"
-                  className="w-full h-[400px] object-cover"
-                />
-                {/* <div className="absolute top-1/4 left-12 p-4 overflow-hidden">
-                  <div className="transition-all duration-700 ease-in-out transform opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-0 group-focus:opacity-100 group-focus:translate-y-0 animate-bannerText">
-                    <h2 className="text-gray-600">
-                      Delhi’s Trusted Car Driving School
-                    </h2>
-                    <h1 className="text-xl font-bold text-gray-900 max-w-xs">
-                      Learn Driving With Experts
-                    </h1>
-                    <p className="mt-2 text-lg">Easy license process.</p>
-                    <p className="text-lg">100% customer satisfaction.</p>
-                    <button className="mt-4 px-6 py-2 bg-black text-white font-semibold rounded hover:bg-gray-800">
-                      Book Your First Class
-                    </button>
-                  </div>
-                </div> */}
-              </div>
-            </SwiperSlide>
+    <div className="w-full relative">
+      <Swiper
+        modules={[Pagination, Autoplay]}
+        spaceBetween={0}
+        slidesPerView={1}
+        loop={true}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        pagination={{ clickable: true }}
+      >
+        {slides.map((slide, index) => (
+          <SwiperSlide key={index} className="relative overflow-hidden">
+            {/* Background Image */}
+            <img
+              src={slide.image}
+              alt={slide.alt}
+              className="w-full h-[400px] sm:h-[500px] md:h-[700px] lg:h-[850px] object-cover animate-zoom"
+            />
 
-            {/* Slide 2 */}
-            <SwiperSlide>
-              <div className="relative">
-                <img
-                  src="/Images/Banner/Banner.jpg"
-                  alt="Slide 1"
-                  className="w-full h-[400px] object-cover"
-                />
-                {/* <div className="absolute top-1/4 left-12 p-4 overflow-hidden">
-                  <div className="transition-all duration-700 ease-in-out transform opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-0 group-focus:opacity-100 group-focus:translate-y-0 animate-bannerText">
-                    <h2 className="text-gray-600">
-                      Delhi’s Trusted Car Driving School
-                    </h2>
-                    <h1 className="text-xl font-bold text-gray-900 max-w-xs">
-                      Learn Driving With Experts
-                    </h1>
-                    <p className="mt-2 text-lg">Easy license process.</p>
-                    <p className="text-lg">100% customer satisfaction.</p>
-                    <button className="mt-4 px-6 py-2 bg-black text-white font-semibold rounded hover:bg-gray-800">
-                      Book Your First Class
-                    </button>
-                  </div>
-                </div> */}
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="relative">
-                <img
-                  src="/Images/Banner/person-taking-driver-s-license-exam.jpg"
-                  alt="Slide 1"
-                  className="w-full h-[400px] object-cover"
-                />
-                {/* <div className="absolute top-1/4 left-12 p-4 overflow-hidden">
-                  <div className="transition-all duration-700 ease-in-out transform opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-0 group-focus:opacity-100 group-focus:translate-y-0 animate-bannerText">
-                    <h2 className="text-gray-600">
-                      Delhi’s Trusted Car Driving School
-                    </h2>
-                    <h1 className="text-xl font-bold text-gray-900 max-w-xs">
-                      Learn Driving With Experts
-                    </h1>
-                    <p className="mt-2 text-lg">Easy license process.</p>
-                    <p className="text-lg">100% customer satisfaction.</p>
-                    <button className="mt-4 px-6 py-2 bg-black text-white font-semibold rounded hover:bg-gray-800">
-                      Book Your First Class
-                    </button>
-                  </div>
-                </div> */}
-              </div>
-            </SwiperSlide>
-
-            {/* Slide 3 */}
-            <SwiperSlide>
-              <div className="relative">
-                <img
-                  src="/Images/Banner/Banner3.jpg"
-                  alt="Slide 1"
-                  className="w-full h-[400px] object-cover"
-                />
-                {/* <div className="absolute top-1/4 left-12 p-4 overflow-hidden">
-                  <div className="transition-all duration-700 ease-in-out transform opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-0 group-focus:opacity-100 group-focus:translate-y-0 animate-bannerText">
-                    <h2 className="text-gray-600">
-                      Delhi’s Trusted Car Driving School
-                    </h2>
-                    <h1 className="text-xl font-bold text-gray-900 max-w-xs">
-                      Learn Driving With Experts
-                    </h1>
-                    <p className="mt-2 text-lg">Easy license process.</p>
-                    <p className="text-lg">100% customer satisfaction.</p>
-                    <button className="mt-4 px-6 py-2 bg-black text-white font-semibold rounded hover:bg-gray-800">
-                      Book Your First Class
-                    </button>
-                  </div>
-                </div> */}
-              </div>
-            </SwiperSlide>
-          </Swiper>
-        </div>
-
-        {/* Right Side - Static Small Banners */}
-        <div className="flex flex-col gap-4">
-          <img
-            src="/Images/Banner/123.jpg"
-            alt="Small Banner 1"
-            className="w-full h-[195px] object-cover rounded-lg"
-          />
-          <img
-            src="/Images/Banner/12.jpg"
-            alt="Small Banner 2"
-            className="w-full h-[195px] object-cover rounded-lg"
-          />
-        </div>
-      </div>
+            {/* Overlay Text & Button */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+              {slide.textLines.map((line, i) => (
+                <h2
+                  key={i}
+                  className={`text-white font-sans drop-shadow-lg mb-1 sm:mb-2
+                    ${i === 0 ? "text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-extrabold tracking-wide" : ""}
+                    ${i === 1 ? "text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold tracking-wide" : ""}
+                    ${i === 2 ? "text-base sm:text-lg md:text-xl lg:text-2xl font-medium tracking-wide" : ""}
+                  `}
+                >
+                  {line}
+                </h2>
+              ))}
+              <button className="mt-4 bg-gradient-to-r from-blue-800 to-blue-600 hover:from-blue-600 hover:to-blue-800 text-white font-semibold px-6 py-3 rounded-lg shadow-xl transition-transform transform hover:scale-105">
+                Book Now
+              </button>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
-}
+};
+
+export default BannerSlider;

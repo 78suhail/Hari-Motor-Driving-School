@@ -3,15 +3,15 @@ import { FaPaperPlane } from "react-icons/fa";
 
 const Contact_Form = () => {
   return (
-    <section className="py-12 px-4 md:px-8 lg:px-16 bg-white text-center">
+    <section className="py-12 px-4 md:px-8 lg:px-16 bg-myBgColor text-center">
       {/* Header */}
       <p className="text-sm font-bold text-red-600">
-        GOVT <span className="text-indigo-900">CERTIFIED</span>
+        GOVT <span className="text-blue-800">CERTIFIED</span>
       </p>
-      <h2 className="text-3xl md:text-4xl font-bold text-indigo-900 mt-2">
-       Talent Motor Driving Training School
+      <h2 className="text-3xl md:text-4xl font-bold text-blue-800 mt-2">
+       Hari Motor Driving Training School
       </h2>
-      <p className="mt-1 text-indigo-900">
+      <p className="mt-1 text-blue-900">
         Call us now or Book Online 24/7
       </p>
 
@@ -25,7 +25,7 @@ const Contact_Form = () => {
             </label>
             <input
               type="text"
-              className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
           <div>
@@ -34,7 +34,7 @@ const Contact_Form = () => {
             </label>
             <input
               type="text"
-              className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
         </div>
@@ -46,7 +46,7 @@ const Contact_Form = () => {
           </label>
           <input
             type="email"
-            className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
@@ -57,7 +57,7 @@ const Contact_Form = () => {
           </label>
           <input
             type="tel"
-            className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
@@ -68,7 +68,7 @@ const Contact_Form = () => {
           </label>
           <textarea
             rows="4"
-            className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           ></textarea>
         </div>
 
@@ -76,7 +76,7 @@ const Contact_Form = () => {
         <div className="flex justify-end">
           <button
             type="submit"
-            className="flex items-center gap-2 bg-indigo-900 text-white px-6 py-3 rounded hover:bg-indigo-800 transition"
+            className="flex items-center gap-2 bg-blue-800 text-white px-6 py-3 rounded hover:bg-blue-900 transition"
           >
             <FaPaperPlane size={14} /> SEND MESSAGE
           </button>

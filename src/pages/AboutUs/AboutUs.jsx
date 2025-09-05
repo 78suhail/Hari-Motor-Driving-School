@@ -1,12 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaCheckCircle, FaPhoneAlt, FaChevronDown } from "react-icons/fa";
-import AboutUs_2 from "./AboutUs_2";
-import ImageSwiper from "../Home_Main_pages/Banner/BannerSlider_2";
+import AboutUsSection from "./AboutUsSection";
 
 const AboutUs = () => {
+     const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
-    <div className="bg-white min-h-screen ">
+    <div className="bg-myBgColor min-h-screen ">
       {/* Hero Section */}
       <div className="relative w-full h-64 md:h-80 flex items-center justify-center">
         {/* Mobile Image */}
@@ -44,21 +46,24 @@ const AboutUs = () => {
               About Us
             </h2>
             <div className="text-lg md:text-xl font-semibold text-gray-700">
-              Talent Motor Driving Training School
+              Hari Motor Driving Training School
             </div>
           </div>
-          <div className="w-full h-60 md:h-80 rounded-lg overflow-hidden shadow-lg ">
+          {/* First Image */}
+          <div className="w-full h-60 md:h-80 rounded-lg overflow-hidden shadow-lg group cursor-pointer">
             <img
               src="/Images/AboutUs/forklift-loading-truck-with-freshly-cut-wooden-planks-construction-industry.jpg"
               alt="Driving Experience 1"
-              className="w-full h-full object-cover object-center"
+              className="w-full h-full object-cover object-center transform transition-transform duration-500 group-hover:scale-110"
             />
           </div>
-          <div className="w-full h-60 md:h-80 rounded-lg overflow-hidden shadow-lg">
+
+          {/* Second Image */}
+          <div className="w-full h-60 md:h-80 rounded-lg overflow-hidden shadow-lg group cursor-pointer">
             <img
               src="/Images/AboutUs/About_short.jpg"
               alt="Driving Experience 2"
-              className="w-full h-full object-cover object-center"
+              className="w-full h-full object-cover object-center transform transition-transform duration-500 group-hover:scale-110"
             />
           </div>
         </div>
@@ -66,7 +71,7 @@ const AboutUs = () => {
           {/* Highlighted Box */}
           <div className="bg-gray-100 border-l-4 border-blue-900 p-4 mb-6 text-gray-800 text-base">
             <span className="font-medium">
-              Talent Motor Driving Training School,
+               Motor Driving Training School,
             </span>{" "}
             We take pride in being a Government of Delhi NCR Approved Driving
             Training School in South Delhi.
@@ -134,7 +139,7 @@ const AboutUs = () => {
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
-              to="#" // Change this path to your booking/contact page route
+              to="/contact" onClick={scrollToTop}
               className="bg-black text-white px-8 py-3 rounded font-semibold hover:bg-gray-800 transition text-center"
             >
               BOOK NOW
@@ -148,7 +153,7 @@ const AboutUs = () => {
       </div>
 
       <div>
-        <AboutUs_2 />
+        <AboutUsSection />
       </div>
     </div>
   );
