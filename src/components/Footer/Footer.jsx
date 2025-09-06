@@ -38,9 +38,9 @@ const Footer = () => {
           {/* Logo + Description */}
           <div>
             <img
-              src="/logo1.png"
+              src="/logo.png"
               alt="Hari Motors"
-              className="w-48 mb-4"
+              className="w-48 mb-4 bg-myBgColor"
             />
             <p className="text-gray-300 text-sm leading-relaxed">
               Hari Motor Driving Training School is a legacy holder and the best
