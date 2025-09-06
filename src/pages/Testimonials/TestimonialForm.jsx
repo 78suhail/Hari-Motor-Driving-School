@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { FaChevronDown } from "react-icons/fa";
+import {
+  FaUser,
+  FaBriefcase,
+  FaCommentDots,
+  FaImage,
+  FaChevronDown,
+  FaPaperPlane,
+} from "react-icons/fa";
 
 const TestimonialForm = ({ onSubmit }) => {
   const [form, setForm] = useState({
@@ -13,7 +20,7 @@ const TestimonialForm = ({ onSubmit }) => {
   // ✅ Handle Input Change
   const handleChange = (e) => {
     const { name, value, files } = e.target;
-    if (name === "image") {
+    if (name === "image" && files && files[0]) {
       const file = files[0];
       setForm({ ...form, image: file });
       setPreview(URL.createObjectURL(file));
@@ -70,7 +77,8 @@ const TestimonialForm = ({ onSubmit }) => {
             Share Your Feedback
           </h1>
           <p className="text-gray-200 mt-2 text-sm sm:text-base max-w-md">
-            We value your experience with us. Please take a moment to submit your testimonial.
+            We value your experience with us. Please take a moment to submit
+            your testimonial.
           </p>
           <div className="mt-6 animate-bounce">
             <FaChevronDown className="w-7 h-7 text-white mx-auto" />
@@ -79,41 +87,47 @@ const TestimonialForm = ({ onSubmit }) => {
       </section>
 
       {/* ✅ Feedback Form */}
-      <section className="max-w-2xl mx-auto my-10 px-4 sm:px-6 lg:px-8 py-6 ">
+      <section className="max-w-2xl mx-auto my-10 px-4 sm:px-6 lg:px-8 py-6">
         <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 border-2">
           <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-6">
             Feedback
           </h2>
 
           <form className="space-y-5" onSubmit={handleSubmit}>
-            {/* Name */}
+            {/* Full Name */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Full Name
               </label>
-              <input
-                type="text"
-                name="name"
-                value={form.name}
-                onChange={handleChange}
-                placeholder="Enter your name"
-                className="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
-              />
+              <div className="relative">
+                <FaUser className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+                <input
+                  type="text"
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
+                  placeholder="Enter your full name"
+                  className="w-full border border-gray-300 p-3 pl-10 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                />
+              </div>
             </div>
 
-            {/* Role */}
+            {/* Your Role */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Your Role
               </label>
-              <input
-                type="text"
-                name="role"
-                value={form.role}
-                onChange={handleChange}
-                placeholder="e.g., Driving Student"
-                className="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
-              />
+              <div className="relative">
+                <FaBriefcase className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+                <input
+                  type="text"
+                  name="role"
+                  value={form.role}
+                  onChange={handleChange}
+                  placeholder="e.g., Driving Student"
+                  className="w-full border border-gray-300 p-3 pl-10 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                />
+              </div>
             </div>
 
             {/* Feedback */}
@@ -121,14 +135,17 @@ const TestimonialForm = ({ onSubmit }) => {
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Feedback
               </label>
-              <textarea
-                name="feedback"
-                rows={4}
-                value={form.feedback}
-                onChange={handleChange}
-                placeholder="Write your feedback here..."
-                className="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
-              />
+              <div className="relative">
+                <FaCommentDots className="absolute left-3 top-4 text-gray-400" />
+                <textarea
+                  name="feedback"
+                  rows={4}
+                  value={form.feedback}
+                  onChange={handleChange}
+                  placeholder="Write your feedback here..."
+                  className="w-full border border-gray-300 p-3 pl-10 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                />
+              </div>
             </div>
 
             {/* Image Upload */}
@@ -136,16 +153,19 @@ const TestimonialForm = ({ onSubmit }) => {
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Upload Photo (optional)
               </label>
-              <input
-                type="file"
-                name="image"
-                accept="image/*"
-                onChange={handleChange}
-                className="w-full border border-gray-300 p-2 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
-              />
+              <div className="relative">
+                <FaImage className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+                <input
+                  type="file"
+                  name="image"
+                  accept="image/*"
+                  onChange={handleChange}
+                  className="w-full border border-gray-300 p-2 pl-10 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                />
+              </div>
             </div>
 
-            {/* Preview */}
+            {/* Preview (if image selected) */}
             {preview && (
               <div className="flex justify-center">
                 <img
@@ -156,11 +176,12 @@ const TestimonialForm = ({ onSubmit }) => {
               </div>
             )}
 
-            {/* Submit Button */}
+            {/* Submit */}
             <button
               type="submit"
-              className="w-full bg-blue-600 text-white p-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-200"
+              className="w-full bg-blue-600 text-white p-3 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-blue-700 transition duration-200"
             >
+              <FaPaperPlane />
               Submit
             </button>
           </form>

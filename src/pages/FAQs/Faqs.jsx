@@ -114,14 +114,27 @@ const Faqs = () => {
             Get A Quote
           </h2>
           <form className="space-y-4">
+            {/* First Name */}
             <div className="relative">
               <input
                 type="text"
-                placeholder="Your Name"
+                placeholder="First Name"
                 className="w-full pl-10 pr-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
               />
               <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
             </div>
+
+            {/* Last Name */}
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Last Name"
+                className="w-full pl-10 pr-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+              <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+            </div>
+
+            {/* Email */}
             <div className="relative">
               <input
                 type="email"
@@ -130,23 +143,18 @@ const Faqs = () => {
               />
               <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
             </div>
+
+            {/* Phone */}
             <div className="relative">
               <input
                 type="tel"
-                placeholder="Your Number"
+                placeholder="Your Phone"
                 className="w-full pl-10 pr-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
               />
               <FaPhone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
             </div>
-            <div>
-              <select className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400">
-                <option>Select Service</option>
-                <option>Driving Lessons</option>
-                <option>License Assistance</option>
-                <option>Test Preparation</option>
-                <option>Other</option>
-              </select>
-            </div>
+
+            {/* Message */}
             <div className="relative">
               <textarea
                 placeholder="Your Message"
@@ -155,6 +163,8 @@ const Faqs = () => {
               ></textarea>
               <FaRegCommentDots className="absolute left-3 top-3 text-gray-400" />
             </div>
+
+            {/* Submit Button */}
             <button
               type="submit"
               className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition"
