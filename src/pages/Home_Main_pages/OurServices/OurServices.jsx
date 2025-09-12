@@ -7,21 +7,21 @@ import { FaCar, FaIdCard, FaFemale } from "react-icons/fa";
 const services = [
   {
     title: "Driving Lessons",
-    img: "/Images/OurService_img/car-buyer-liking-new-vehicle-interior-vehicle-dealership.jpg",
+    img: "/Images/OurService_img/OurServices_1.webp",
     description:
       "Learn to drive with confidence through our expert driving lessons. Whether you’re a beginner or need a refresher, our certified instructors offer patient, personalized training tailored to your skill level.",
     icon: <FaCar className="text-3xl mb-2" />,
   },
   {
     title: "License Assistance",
-    img: "/Images/OurService_img/handsome-male-taxi-driver-costume.jpg",
+    img: "/Images/OurService_img/OurServices_2.webp",
     description:
       "Our License Assistance service guides you through every step of the process—from application and document preparation to booking tests and understanding requirements.",
     icon: <FaIdCard className="text-3xl mb-2" />,
   },
   {
     title: "Women-Only Training",
-    img: "/Images/OurService_img/portrait-brunette-woman-her-car.jpg",
+    img: "/Images/OurService_img/OurServices_3.webp",
     description:
       "Our Women-Only Training program offers a safe, supportive, and empowering environment for women to learn driving with confidence.",
     icon: <FaFemale className="text-3xl mb-2" />,

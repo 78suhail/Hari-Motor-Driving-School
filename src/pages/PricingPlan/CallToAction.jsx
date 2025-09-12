@@ -14,7 +14,7 @@ const CallToAction = () => {
         {/* Left Image */}
         <div className="flex-shrink-0 pl-6">
           <img
-            src="/Images/young-couple-car-trip.jpg" 
+            src="/Images/PricingPlan_img/Image.webp" 
             alt="Driver"
             className="w-64 md:w-80 " 
           />
@@ -30,7 +30,7 @@ const CallToAction = () => {
               <p className="text-sm">Call Us Any Time</p>
               <p className="text-lg font-semibold flex items-center gap-2">
                 <FaPhoneAlt className="text-blue-500" />
-                (+163) 6972 9901
+                (+91) 880-073-3355
               </p>
             </div>
           </div>

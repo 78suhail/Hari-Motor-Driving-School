@@ -6,12 +6,12 @@ import { FaChevronDown } from "react-icons/fa";
    Gallery Images
 --------------------------------------------------- */
 const galleryImages = [
-  "/Images/TeamSection_img/handsome-unshaven-european-man-has-serious-self-confident-expression-wears-glasses.jpg",
-  "/Images/TeamSection_img/young-bearded-man-with-striped-shirt.jpg",
-  "/Images/TeamSection_img/handsome-male-taxi-driver-costume.jpg",
-  "/Images/TeamSection_img/portrait-brunette-woman-her-car.jpg",
-  "/Images/TeamSection_img/horizontal-portrait-smiling-happy-young-pleasant-looking-female-wears-denim-shirt-stylish-glasses-with-straight-blonde-hair-expresses-positiveness-poses.jpg",
-  "/Images/TeamSection_img/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair.jpg",
+  "/Images/Gallery_img/Image.webp",
+  "/Images/Gallery_img/Image_1.webp",
+  "/Images/Gallery_img/Image_2.webp",
+  "/Images/Gallery_img/Image_3.webp",
+  "/Images/Gallery_img/Image_4.webp",
+  "/Images/Gallery_img/Image_5.webp",
  
 ];
 
@@ -24,14 +24,14 @@ const Banner = () => (
   <div className="relative w-full h-64 md:h-80 flex items-center justify-center">
     {/* Mobile Image */}
     <img
-      src="/Images/Gallery/young-woman-testing-car-car-showroom.jpg"
+      src="/Images/Gallery_img/Mobile_banner.webp"
       alt="Contact Hero Mobile"
       className="absolute inset-0 w-full h-full object-contain bg-black opacity-90 block md:hidden"
     />
 
     {/* Desktop Image */}
     <img
-      src="/Images/Gallery/young-woman-enjoying-road-trip.jpg"
+      src="/Images/Gallery_img/Desktop_banner.webp"
       alt="Contact Hero Desktop"
       className="absolute inset-0 w-full h-full object-cover object-center opacity-80 hidden md:block"
     />

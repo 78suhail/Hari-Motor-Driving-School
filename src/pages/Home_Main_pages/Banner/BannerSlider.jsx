@@ -8,7 +8,7 @@ import {Link} from 'react-router-dom'
 const BannerSlider = () => {
   const slides = [
     {
-      image: "/Images/Banner/123.jpg",
+      image: "/Images/Banner/Hero_banner.webp",
       alt: "Slide 1",
       textLines: [
         "Drive Safe, Drive Smart.",
@@ -17,7 +17,7 @@ const BannerSlider = () => {
       ],
     },
     {
-      image: "/Images/Banner/123.jpg",
+      image: "/Images/Banner/Hero_banner.webp",
       alt: "Slide 2",
       textLines: [
         "Master the Road, Gain Confidence.",
@@ -26,7 +26,7 @@ const BannerSlider = () => {
       ],
     },
     {
-      image: "/Images/Banner/123.jpg",
+      image: "/Images/Banner/Hero_banner.webp",
       alt: "Slide 3",
       textLines: [
         "Safe Driving Guaranteed.",

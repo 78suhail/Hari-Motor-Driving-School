@@ -50,9 +50,9 @@ const WhyChooseUs = () => {
           <div className="flex-1 flex justify-center lg:justify-end mt-8 lg:mt-0">
             <div className="overflow-hidden rounded-lg">
               <img
-                src="/Images/WhyChoose/WhyChoose.jpg"
+                src="/Images/WhyChoose/why.webp"
                 alt="Happy Students"
-                className="max-w-full lg:max-w-md transform transition-transform duration-500 ease-in-out hover:scale-110 cursor-pointer animate-zoom"
+                className="max-w-full lg:max-w-sm transform transition-transform duration-500 ease-in-out hover:scale-110 cursor-pointer animate-zoom"
               />
             </div>
           </div>

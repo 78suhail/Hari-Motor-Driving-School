@@ -26,7 +26,7 @@ const Header = () => {
           {/* Phone Number */}
           <div className="flex items-center gap-2">
             <FiPhone className="text-lg" />
-            <span className="font-medium">+91 999-999-4613</span>
+            <span className="font-medium">+91 880-073-3355</span>
           </div>
 
           {/* Social Icons */}
